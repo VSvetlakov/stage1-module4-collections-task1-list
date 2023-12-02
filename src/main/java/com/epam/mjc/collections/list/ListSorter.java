@@ -16,20 +16,16 @@ class ListComparator implements Comparator<String> {
     @Override
     public int compare(String a, String b) {
 
-        int aa = Integer.parseInt(a);
-        int bb = Integer.parseInt(b);
-
-        int resA = formula(aa);
-        int resB = formula(bb);
-
-        if (resA == resB){
-            return aa - bb;
+        int result = getResult(a) - getResult(b);
+        if (result == 0){
+            return a.compareTo(b);
         }else {
-            return resA - resB;
+            return result;
         }
     }
 
-    private int formula(int x){
-        return (5 * x) * (5 * x) +3;
+    private int getResult(String x){
+        int num = Integer.parseInt(x);
+        return 5 * num * num +3;
     }
 }

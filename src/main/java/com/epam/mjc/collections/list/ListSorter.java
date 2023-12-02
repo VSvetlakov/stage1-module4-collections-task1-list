@@ -7,9 +7,7 @@ import java.util.List;
 public class ListSorter {
     public void sort(List<String> sourceList) {
 
-        Comparator listComparator = new ListComparator();
-        Collections.sort(sourceList, listComparator);
-
+        sourceList.sort(new ListComparator());
     }
 }
 
